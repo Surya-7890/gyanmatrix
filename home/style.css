@@ -1,0 +1,106 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: url('./bg.png') center/cover no-repeat;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+.top {
+    display: flex;
+    position: absolute;
+    right: 20px;
+}
+
+img {
+    height: 60px;
+    cursor: pointer;
+}
+
+.image {
+    height: 80vh;
+    width: 80vw;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+}
+
+#change {
+    width: 80vw;
+    height: 80vh;
+    object-fit: contain;
+}
+
+.top-img {
+    background: rgb(0,0,0, 0.2);
+    width: fit-content;
+}
+
+@media(max-width) {
+
+}
+
+#bg {
+    width: 250px;
+    height: 250px;
+}
+
+#frame {
+    width: 200px;
+    height: 200px;
+}
+
+#container {
+    position: relative;
+    bottom: -100px;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 50px;
+    grid-gap: 20px;
+}
+
+.images {
+    position: relative;
+    height: 200px;
+    width: 200px;
+}
+
+#bg, #frame, .img {
+    position: absolute;
+    bottom: 0px;
+}
+
+#frame {
+    left: 30px;
+}
+
+.img-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    width: 150px;
+    height: 180px;
+    left: 25%;
+    object-fit: contain;
+}
+
+@media(max-width: 600px) {
+    body {
+        overflow-y: scroll;
+    }
+    #container {
+        grid-template-columns: 1fr;
+        grid-row-gap: 50px;
+    }
+}
