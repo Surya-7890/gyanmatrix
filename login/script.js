@@ -20,7 +20,6 @@ form.addEventListener('submit', (e)=>{
             console.log('ran')
             const error = document.getElementsByClassName('error');
             error.innerHTML = "Invalid Credentials"
-            
         }
     }
 })

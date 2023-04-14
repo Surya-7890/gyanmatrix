@@ -1,5 +1,6 @@
-const student = document.getElementById('student-logo');
+const container = document.getElementById('container');
 const staff = document.getElementById('staff-logo');
+const student = document.getElementById('student-logo');
 
 
 const createElement = (pos, i) => {
@@ -27,16 +28,25 @@ student.addEventListener('click', () => {
     for(let i=1; i<=6; i++) {
         createElement('student', i);
     }
+    container.dataset.target = "students"
 });
 
 staff.addEventListener('click', () => {
     for(let i=1; i<=6; i++) {
         createElement('staff', i);
     }
+    container.dataset.target = "staff"
 });
 
-const container = document.getElementById('container').children;
-container.forEach((element) => {
 
+const array = [];
+const length = container.children.length
+for(let i=0; i<length; i++) {
+    array.push(container.children[i])
+}
+array.forEach((element, index) => {
+    element.addEventListener('click', () => {
+        const target = container.dataset.target;
+        window.location.href = `/info/index.html?${target}:${index}`
+    })
 })
-
